@@ -1,0 +1,29 @@
+@use "../../assets/styles/_variables.scss" as *;
+
+.logo {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1;
+    display: inline;
+    
+    &__container {
+        padding: .15em;
+        border-radius: 5px;
+        background-color: $color-white;
+        border: 2px solid $color-black;
+        display: inline-block;
+    }
+
+    &__img {
+        width: 45px;
+        display: block;
+    }
+
+    @media screen and (min-width: $mobile) {
+        position: static;
+        &__img {
+            width: 55px;
+        }
+    }
+}

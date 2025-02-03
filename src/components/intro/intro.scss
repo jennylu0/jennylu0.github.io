@@ -1,0 +1,123 @@
+@use "../../assets/styles/_variables.scss" as *;
+
+.intro {
+    padding: 0 50px;
+
+
+    &__eyebrow {
+        font-family: $font-secondary;
+        font-size: 20px;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: .5em;
+        margin-top: .25em;
+        margin-bottom: 1.25em;
+        &-img {
+            flex: 0 0 60px;
+            width: 100%;
+            display: block;
+        }
+        &-img-container {
+            width: 40px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    &__body {
+        font-size: 12px;
+        font-weight: 400;
+        margin-top: 30px;
+    }
+
+    @media screen and (min-width: $mobile) {
+        padding: 0;
+        flex: 0 1 auto;
+
+        &__eyebrow {
+            font-size: 24px;
+        }
+
+        &__title {
+            &-img {
+                &-container {
+                    width: 60px;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $tablet) {
+        max-width: 320px;
+    }
+}
+
+.maomonium {
+    display: flex;
+    align-items: flex-end;
+    gap: .15em;
+    margin: 0;
+
+    &__mao {
+        display: flex;
+        flex-direction: column; 
+        line-height: 1;
+        &-eyebrow {
+            font-family: $font-secondary;
+            font-size: 14px;
+            text-transform: uppercase;
+            width: 0;
+            margin-left: -2px;
+        }
+        &-cn {
+            font-family: $font-cn;
+            font-size: 20px;
+            line-height: 1;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: $color-black;
+            color: $color-white;
+            paint-order: stroke fill;
+        }
+    }
+
+    &__monium {
+        font-size: 28px;
+        text-transform: uppercase;
+        line-height: .7;
+    }
+
+    &__bang {
+        font-family: $font-secondary;
+        font-size: 46px;
+        line-height: .6;
+    }
+
+    @media screen and (min-width: $mobile) {
+        &__monium {
+            font-size: 48px;
+        }
+
+        &__mao {
+            &-eyebrow {
+                font-size: 20px;
+                margin-left: 0;
+            }
+            &-cn {
+                font-size: 36px;
+            }
+        }
+
+        &__bang {
+            font-size: 85px;
+        }
+    }
+
+    @media screen and (min-width: $tablet) {
+    }
+}

@@ -1,0 +1,16 @@
+@use '_variables' as *;
+
+html {
+    background-color: $color-white;
+}
+
+body {
+    font-family: $font-primary;
+    font-weight: 400;
+    margin: 0;
+}
+
+::selection {
+    color: $color-white;
+    background-color: $color-black;
+}

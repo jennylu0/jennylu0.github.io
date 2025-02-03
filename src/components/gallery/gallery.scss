@@ -1,0 +1,114 @@
+@use "../../assets/styles/_variables.scss" as *;
+
+
+.gallery {
+    // display: flex;
+    // flex-wrap: wrap;
+    // align-items: flex-start;
+    // gap: 30px;
+    margin-right: -30px;
+}
+
+.gallery__sizer {
+    visibility: hidden;
+}
+
+.gallery-item,
+.gallery__sizer {
+    width: calc(100% - 30px);
+    margin-bottom: 30px;
+    display: inline-block;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 2px solid $color-black;
+    padding: .15em;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+
+    @media screen and (min-width: $mobile) {
+        width: calc(50% - 30px);
+    }
+
+    @media screen and (min-width: $tablet) {
+        width: calc(100% - 30px);
+    }
+
+    @media screen and (min-width: $tablet-lg) {
+        width: calc(50% - 30px);
+    }
+  
+    @media screen and (min-width: $desktop) {
+        width: calc((100% / 3) - 30px);
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    &.hidden {
+        transform: scale(.9);
+        opacity: 0;
+    }
+    
+
+    // &.filter {
+    //     &::after {
+    //         background-color: $color-red;
+    //     }
+    // }
+
+    // &.filter2 {
+    //     &::after {
+    //         background-color: $color-gold;
+    //     }
+    // }
+
+    &__img {
+        border-radius: 5px;
+        overflow: hidden;
+        display: block;
+        width: 100%;
+    }
+
+    &__filters {
+        margin: 0;
+        list-style-type: none;
+        padding: 0;
+        position: absolute;
+        top: .5em;
+        left: .5em;
+        display: flex;
+        gap: .25em;
+        flex-direction: column;
+    }
+
+    &__filter {
+        &-item {
+            &::before {
+                content: '✦';
+                font-size: 1.5em;
+                -webkit-text-stroke-width: 2px;
+                -webkit-text-stroke-color: $color-black;
+                height: .7em;
+                line-height: .7em;
+                display: block;
+            }
+
+            &.illustration {
+                color: $color-red;
+            }
+            &.pattern {
+                color: $color-gold;
+            }
+            &.merch {
+                color: $color-teal;
+            }
+            &.original {
+                color: $color-purple;
+            }
+        }
+    }
+}

@@ -1,0 +1,144 @@
+@use "../../assets/styles/_variables.scss" as *;
+
+
+.filters {
+    margin-bottom: 4em;
+    padding-left: 50px;
+    padding-right: 50px;
+    z-index: 1;
+
+    &__list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5em 1em;
+    }
+
+    li {
+        border-radius: 5px;
+        border: 2px solid $color-black;
+        padding: .05em;
+        transition: all 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+
+    }
+
+    button {
+        outline: 0;
+        padding: 0;
+        background-color: $color-white;
+        font-family: $font-primary;
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 600;
+        border-radius: 5px;
+        padding: .1em .2em;
+        // transition: all 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+        &.filter {
+            &__item {
+                position: relative;
+                overflow: hidden;
+                &--red {
+                    &::after {
+                        background-color: $color-red;
+                    }
+                }
+        
+                &--gold {
+                    &::after {
+                        background-color: $color-gold;
+                    }
+
+                    // &:hover,
+                    // &.filter__item--active {
+                    //     span {
+                    //         color: $color-black;
+                    //     }
+                    // }
+                }
+
+                &--teal {
+                    &::after {
+                        background-color: $color-teal;
+                    }
+
+                    // &:hover,
+                    // &.filter__item--active {
+                    //     span {
+                    //         color: $color-black;
+                    //     }
+                    // }
+                }
+
+                &--purple {
+                    &::after {
+                        background-color: $color-purple;
+                    }
+
+                    // &:hover,
+                    // &.filter__item--active {
+                    //     span {
+                    //         color: $color-black;
+                    //     }
+                    // }
+                }
+
+                &--red-dark {
+                    &::after {
+                        background-color: $color-red-dark;
+                    }
+
+                    // &:hover,
+                    // &.filter__item--active {
+                    //     span {
+                    //         color: $color-black;
+                    //     }
+                    // }
+                }
+            }
+        }
+
+        &:hover,
+        &.filter__item--active {
+            cursor: pointer;
+            color: $color-white;
+            -webkit-text-stroke: 3px black;
+            paint-order: stroke fill;
+            
+            span {
+                // color: $color-white;
+            }
+            &:after {
+                top: 0;
+            }
+        }
+
+        span {
+            position: relative;
+            display: block;
+            z-index: 1;
+            // transition: all 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: calc(100% - 4px);
+            background-color: $color-black;
+            transition: all 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+            z-index: 0;
+            border-radius: 4px 4px 0 0;
+        }
+
+    }
+
+    @media screen and (min-width: $mobile) {
+        padding: 0;
+        position: static;
+    }
+    
+}
