@@ -25,7 +25,7 @@
     display: inline-block;
     position: relative;
     box-sizing: border-box;
-    transition: all 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+    transition: all 0.4s cubic-bezier(0.76, 0, 0.24, 1);
 
     @media screen and (min-width: $mobile) {
         width: calc(50% - 30px);
