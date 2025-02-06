@@ -14,41 +14,11 @@ function Gallery(props) {
 
     const { activeFilters } = props;
 
-    const items = [
-        {
-            img: 'https://placehold.co/600x900/png',
-            filters: ["filter"],
-            props: ["pattern"]
-        },
-        {
-            img: 'https://placehold.co/600x400/png',
-            filters: ["filter", "filter2"],
-            props: [""]
-        },
-        {
-            img: 'https://placehold.co/600x850/png',
-            filters: ["filter"],
-            props: [""]
-        },
-        {
-            img: 'https://placehold.co/800x400/png',
-            filters: [],
-            props: ["pattern"]
-        },
-        {
-            img: 'https://placehold.co/600x600/png',
-            filters: ["filter", "filter2"],
-            props: [""]
-        }
-    ];
-
     const galleryItems = Data.map((item, i) => {
         return (
             <GalleryItem key={`gallery-item-${i}`} props={item} activeFilters={activeFilters} masonry={masonry} />
         )
     })
-
-    // console.log(galleryRef);
     
     
     const iniMasonry = () => {
@@ -62,10 +32,9 @@ function Gallery(props) {
 
         setMasonry(masonry);
 
-        imagesLoaded(galleryRef, () => {
-            console.log('img loaded');
+        imagesLoaded(galleryRef).on('progress', () => {
             masonry.layout();
-        });
+        })
     }
 
     useEffect(() => {

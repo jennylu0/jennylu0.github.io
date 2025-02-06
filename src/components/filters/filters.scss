@@ -49,66 +49,47 @@
                     &::after {
                         background-color: $color-gold;
                     }
-
-                    // &:hover,
-                    // &.filter__item--active {
-                    //     span {
-                    //         color: $color-black;
-                    //     }
-                    // }
                 }
 
                 &--teal {
                     &::after {
                         background-color: $color-teal;
                     }
-
-                    // &:hover,
-                    // &.filter__item--active {
-                    //     span {
-                    //         color: $color-black;
-                    //     }
-                    // }
                 }
 
                 &--purple {
                     &::after {
                         background-color: $color-purple;
                     }
-
-                    // &:hover,
-                    // &.filter__item--active {
-                    //     span {
-                    //         color: $color-black;
-                    //     }
-                    // }
                 }
 
                 &--red-dark {
                     &::after {
                         background-color: $color-red-dark;
                     }
-
-                    // &:hover,
-                    // &.filter__item--active {
-                    //     span {
-                    //         color: $color-black;
-                    //     }
-                    // }
                 }
             }
         }
 
-        &:hover,
+        @media (hover: hover) {
+            &:hover {
+                cursor: pointer;
+                color: $color-white;
+                -webkit-text-stroke: 3px black;
+                paint-order: stroke fill;
+                
+                &:after {
+                    top: 0;
+                }
+            }
+        }
+
         &.filter__item--active {
             cursor: pointer;
             color: $color-white;
             -webkit-text-stroke: 3px black;
             paint-order: stroke fill;
             
-            span {
-                // color: $color-white;
-            }
             &:after {
                 top: 0;
             }
