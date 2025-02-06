@@ -32,7 +32,8 @@ function Gallery(props) {
 
         setMasonry(masonry);
 
-        imagesLoaded(galleryRef).on('progress', () => {
+        imagesLoaded(galleryRef, () => {
+            console.log('images loaded');
             masonry.layout();
         })
     }
