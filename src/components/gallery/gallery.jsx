@@ -4,8 +4,6 @@ import Masonry from 'masonry-layout';
 import './gallery.scss';
 import GalleryItem from '../galleryItem/galleryItem';
 import Data from '../../assets/data/gallery.js';
-import imagesLoaded from 'imagesloaded';
-
 
 function Gallery(props) {
 
@@ -32,25 +30,31 @@ function Gallery(props) {
 
         setMasonry(masonry);
 
-        imagesLoaded(galleryRef, () => {
-            console.log('images loaded');
-            masonry.layout();
-        })
+        // masonry.layout();
+    }
+
+    const waitForImages = () => {
+        const images = [...galleryRef.current.querySelectorAll('.gallery-item .gallery-item__img')];
+        const promises = images.map(img => {
+            return new Promise((resolve) => {
+                if (img.complete) {
+                    resolve(); 
+                } else {
+                    img.onload = () => resolve();
+                }
+            })})
+
+        Promise.all(promises).then(
+            data => { 
+                iniMasonry();
+                return data; 
+            },
+        )
     }
 
     useEffect(() => {
-        iniMasonry();
+        waitForImages();
     }, [])
-
-    useEffect(() => {
-        // console.log('filters changed', activeFilters);
-        // if (masonry) {
-        //     setTimeout(() => {
-        //         masonry.reloadItems();
-        //         masonry.layout();
-        //     }, 1000)
-        // }
-    }, [activeFilters, masonry])
     
     return (
         <div className="gallery" ref={galleryRef}>
