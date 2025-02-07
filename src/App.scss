@@ -5,6 +5,7 @@
   gap: 60px;
   padding: 30px;
   flex-wrap: wrap;
+
   &__sidebar {
       flex: 1 1 100%;
       
@@ -19,6 +20,8 @@
   }
 
   @media screen and (min-width: $tablet) {
+    flex-wrap: nowrap;
+
     &__sidebar {
       flex: 0 0 320px;
       
