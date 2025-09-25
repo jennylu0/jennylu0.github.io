@@ -27,6 +27,18 @@
     box-sizing: border-box;
     transition: all 0.4s cubic-bezier(0.76, 0, 0.24, 1);
 
+    a {
+        display: block;
+    }
+
+    &--sticker {
+        border: none;
+
+        a {
+            padding: .5em;
+        }
+    }
+
     @media screen and (min-width: $mobile) {
         width: calc(50% - 30px);
     }

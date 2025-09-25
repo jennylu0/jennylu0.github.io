@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import './galleryItem.scss';
 
 function GalleryItem ({props, activeFilters, masonry}) {
-    const { img, filters } = props;
+    const { img, filters, modifier } = props;
     const [isInactive, setInactive] = useState(false);
     const item = useRef();
     // console.log(activeFilters)
@@ -51,7 +51,7 @@ function GalleryItem ({props, activeFilters, masonry}) {
     
 
     return (
-        <div className={`gallery-item ${(filters).join(' ')} ${checkInactive() ? 'hidden' : ''}`} ref={item}>
+        <div className={`gallery-item ${(filters).join(' ')} ${checkInactive() ? 'hidden' : ''}${modifier ? ` gallery-item--${modifier}` : ''}`} ref={item}>
             <a href={img} target="_blank">
                 <ul className="gallery-item__filters">{itemFilters}</ul>
                 <img src={img} className="gallery-item__img" />
