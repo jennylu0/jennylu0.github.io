@@ -21,7 +21,8 @@
     }
 
     @media screen and (min-width: $mobile) {
-        position: static;
+        position: sticky;
+        top: 0;
         &__img {
             width: 55px;
         }

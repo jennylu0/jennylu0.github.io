@@ -8,6 +8,7 @@
 
   &__sidebar {
       flex: 1 1 100%;
+      // max-height: calc(100vh - 30px);
       
       &-content {
         display: flex;
@@ -28,9 +29,10 @@
       &-content {
         flex-direction: column;
         gap: 60px;
-        position: sticky;
+        position: fixed;
         top: 30px;
-
+        height: calc(100vh - 60px);
+        overflow: auto;
       }
     }
 

@@ -14,6 +14,11 @@
         display: flex;
         flex-wrap: wrap;
         gap: .5em 1em;
+        justify-content: center;
+
+        @media screen and (min-width: $tablet) {
+            justify-content: start;
+        }
     }
 
     li {
