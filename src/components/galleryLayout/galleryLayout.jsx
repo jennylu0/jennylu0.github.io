@@ -7,12 +7,17 @@ function GalleryLayout() {
 
     const toggleFilter = (filter) => {
         if (activeFilters.includes(filter.id)) {
-            let i = activeFilters.indexOf(filter.id);
-            const filters = activeFilters.toSpliced(i, 1);
-            setActiveFilters(filters);
+            setActiveFilters([]);
         } else {
-            setActiveFilters([...activeFilters, filter.id])
+            setActiveFilters([filter.id]);
         }
+        // if (activeFilters.includes(filter.id)) {
+        //     let i = activeFilters.indexOf(filter.id);
+        //     const filters = activeFilters.toSpliced(i, 1);
+        //     setActiveFilters(filters);
+        // } else {
+        //     setActiveFilters([...activeFilters, filter.id])
+        // }
     }
 
   return (
