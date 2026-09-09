@@ -1,6 +1,10 @@
 const imgPath = '/gallery/';
 const data = [
     {
+        img: `${imgPath}Phm-sm.png`,
+        filters: ["illustration"],
+    },
+    {
         img: `${imgPath}Re9-grabby.png`,
         filters: ["illustration"],
     },
